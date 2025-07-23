@@ -1,0 +1,264 @@
+<?xml version="1.0" ?>
+
+<robot xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <link name="base_footprint"/>
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.00298593644358607 -0.000268295172875241 0.154640959753498"
+        rpy="0 0 0" />
+      <mass
+        value="12.0012331336924" />
+      <inertia
+        ixx="0.35866059453322"
+        ixy="4.67770377513155E-08"
+        ixz="0.000423861580413772"
+        iyy="0.233823654906046"
+        iyz="4.66362844507336E-09"
+        izz="0.375131573810826" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+    <origin xyz="0 0 0.0701" rpy="0 0 0"/>
+  </joint>
+  <link
+    name="wheel_left_link">
+    <inertial>
+      <origin
+        xyz="-8.64344718974191E-06 0.0228237946886783 7.57765177879927E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.778339693950675" />
+      <inertia
+        ixx="0.00165430356623842"
+        ixy="6.08982301451092E-09"
+        ixz="3.56600628105672E-11"
+        iyy="0.0030911762450513"
+        iyz="-2.8372582055542E-11"
+        izz="0.00165423410528579" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/wheel_left_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/wheel_left_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_left_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.161 0.0154413114931434"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_left_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="wheel_right_link">
+    <inertial>
+      <origin
+        xyz="8.64344718911542E-06 -0.0228237946886785 7.57765181002429E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.778339693950669" />
+      <inertia
+        ixx="0.00165430356623842"
+        ixy="6.08982301952646E-09"
+        ixz="-3.56600611496615E-11"
+        iyy="0.00309117624505131"
+        iyz="2.83725665326271E-11"
+        izz="0.0016542341052858" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/wheel_right_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/wheel_right_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_right_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.161 0.0154413114931451"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_right_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="caster_front_link">
+    <inertial>
+      <origin
+        xyz="0.000805650652548229 5.72729797615468E-17 -4.48165838715792E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386238363179237" />
+      <inertia
+        ixx="7.66294109641648E-06"
+        ixy="-1.82721726780336E-20"
+        ixz="2.42889623642253E-11"
+        iyy="1.29044379500025E-05"
+        iyz="-4.77133079419545E-24"
+        izz="7.66293122817673E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/caster_front_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/caster_front_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_front_joint"
+    type="fixed">
+    <origin
+      xyz="0.229250238887004 -0.000124017376899337 -0.0431115511971616"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_front_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="caster_rear_link">
+    <inertial>
+      <origin
+        xyz="-0.000805650652548229 -6.01461155186334E-17 -4.48165838716486E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0386238363179237" />
+      <inertia
+        ixx="7.66294109641648E-06"
+        ixy="-3.86943114962554E-20"
+        ixz="-2.42889623642257E-11"
+        iyy="1.29044379500025E-05"
+        iyz="-7.32910421549178E-20"
+        izz="7.66293122817673E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/caster_rear_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rospital_description/meshes/caster_rear_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="caster_rear_joint"
+    type="fixed">
+    <origin
+      xyz="-0.229157886818826 -0.000123712642857387 -0.0431115511971648"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="caster_rear_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
